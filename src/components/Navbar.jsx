@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
   const pathName = usePathname();
+  const router = useRouter();
   const links = [
     {
       title: "About",
@@ -23,9 +24,15 @@ const Navbar = () => {
       path: "/profile",
     },
   ];
+  const loginHandler = () => {
+    router.push("/login");
+  };
   return (
-    <nav className="p-3 flex justify-evenly bg-gray-200">
-      <h2 className="text-green-700 text-2xl font-bold">Logo</h2>
+    <nav className="p-3 flex justify-evenly items-center bg-gray-200">
+      <Link href={"/"} className="text-green-700 text-2xl font-bold">
+        Logo
+      </Link>
+
       <ul className="flex justify-between space-x-4">
         {links?.map((link) => (
           <Link
@@ -37,6 +44,8 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
+
+      <button onClick={loginHandler}>LogIn</button>
     </nav>
   );
 };
