@@ -2,6 +2,24 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Create Next App
+
+```bash
+npx create-next-app@latest
+```
+
+Setup next app
+
+```bash
+ What is your project named? ... app name
+√ Would you like to use TypeScript? ... No
+√ Would you like to use ESLint? ...Yes
+√ Would you like to use Tailwind CSS? ...  Yes
+√ Would you like to use `src/` directory? ...  Yes
+√ Would you like to use App Router? (recommended) ...  Yes
+√ Would you like to customize the default import alias (@/*)? ... No
+```
+
 First, run the development server:
 
 ```bash
