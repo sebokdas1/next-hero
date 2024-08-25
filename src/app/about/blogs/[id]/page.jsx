@@ -172,8 +172,35 @@ const page = ({ params }) => {
   const blog = blogs?.find((blog) => blog?.id == params?.id);
   console.log(blog);
   return (
-    <div>
-      <h2>{blog?.id}</h2>
+    <div className="mt-1">
+      <div className="px-1 lg:px-4">
+        <h1 className="text-2xl font-bold text-center">{blog.title}</h1>
+        <h6>Author: {blog.author}</h6>
+        <h6 className="text-gray-400">Date: {blog.date}</h6>
+        <h2 className="text-xl px-2 lg:px-8 first-letter:text-3xl">
+          {blog.content}
+        </h2>
+        <h6 className="text-gray-400 mt-3">
+          Tags:
+          {blog.tags.map((tag) => (
+            <span
+              key={tag.indexOf}
+              className="px-1 hover:underline hover:text-blue-400 hover:cursor-pointer"
+            >
+              #{tag}
+            </span>
+          ))}
+        </h6>
+
+        <div className="mt-12">
+          <h1 className="text-xl font-semibold">Comments:</h1>
+          <div className="pl-9 flex gap-1 items-center">
+            <h4>{blog?.comments[0].user}</h4>
+            <h6 className="text-sm text-gray-300">{blog.comments[0].date}</h6>:
+          </div>
+          <h3 className="pl-8 lg:pl-20">{blog.comments[0].comment}</h3>
+        </div>
+      </div>
     </div>
   );
 };
