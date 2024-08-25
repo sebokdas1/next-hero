@@ -1,7 +1,6 @@
-import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const page = ({ params }) => {
   const blogs = [
     {
       id: 1,
@@ -170,24 +169,11 @@ const page = () => {
       ],
     },
   ];
-
+  const blog = blogs?.find((blog) => blog?.id == params?.id);
+  console.log(blog);
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-2 px-2">
-      {blogs?.map((blog) => (
-        <div key={blog?.id} className="border-2 p-2">
-          <h2>{blog?.title}</h2>
-          <h5 className="flex justify-between items-center">
-            <span className="text-orange-900">{blog?.author}</span>{" "}
-            <span className="text-red-400">{blog?.date}</span>
-          </h5>
-          <Link
-            href={`/about/blogs/${blog?.id}`}
-            className="text-blue-700 hover:underline"
-          >
-            Read More
-          </Link>
-        </div>
-      ))}
+    <div>
+      <h2>{blog?.id}</h2>
     </div>
   );
 };
