@@ -29,12 +29,12 @@ const Navbar = () => {
     router.push("/login");
   };
   return (
-    <nav className="p-3 flex justify-evenly items-center bg-gray-200">
+    <nav className="p-3 flex lg:justify-evenly items-center bg-gray-200">
       <Link href={"/"} className="text-green-700 text-2xl font-bold">
         Logo
       </Link>
 
-      <ul className="flex justify-between space-x-4">
+      <ul className="flex justify-between lg:space-x-4">
         {links?.map((link) => (
           <Link
             className={`${pathName === link.path && "text-cyan-700"}`}
