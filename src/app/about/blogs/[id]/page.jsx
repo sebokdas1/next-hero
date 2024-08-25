@@ -194,7 +194,7 @@ const page = ({ params }) => {
 
         <div className="mt-12">
           <h1 className="text-xl font-semibold">Comments:</h1>
-          <div className="pl-9 flex gap-1 items-center">
+          <div className="pl-4 lg:pl-9 flex gap-1 items-center">
             <h4>{blog?.comments[0].user}</h4>
             <h6 className="text-sm text-gray-300">{blog.comments[0].date}</h6>:
           </div>
