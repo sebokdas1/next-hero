@@ -24,6 +24,7 @@ const Navbar = () => {
       path: "/profile",
     },
   ];
+
   const loginHandler = () => {
     router.push("/login");
   };
