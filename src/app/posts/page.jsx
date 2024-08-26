@@ -6,7 +6,7 @@ const page = async () => {
   const postsData = await getPosts();
   return (
     <div>
-      <div className="grid grid-cols-4 gap-6 px-2 pt-2 bg-gray-300">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 px-2 pt-2 bg-gray-300">
         {postsData?.map((post) => (
           <div
             key={post.id}

@@ -170,7 +170,6 @@ const page = ({ params }) => {
     },
   ];
   const blog = blogs?.find((blog) => blog?.id == params?.id);
-  console.log(blog);
   return (
     <div className="mt-1">
       <div className="px-1 lg:px-4">
