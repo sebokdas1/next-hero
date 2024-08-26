@@ -11,7 +11,7 @@ const page = () => {
   //     .then((data) => setmeals(data));
 
   return (
-    <div className="bg-orange-600 h-screen pt-2">
+    <div className="bg-orange-600  pt-2">
       <h1 className="text-4xl font-bold text-white text-center">
         Search your favourite meals
       </h1>
