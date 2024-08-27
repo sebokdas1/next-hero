@@ -15,6 +15,7 @@ export const generateMetadata = async ({ params }) => {
   return {
     title: postData?.title,
     description: postData?.body,
+    keywords: postData.body.split(" "),
   };
 };
 
