@@ -2,6 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { Roboto_Condensed } from "next/font/google";
+
+const conensed = Roboto_Condensed({ weight: ["400"], subsets: ["latin"] });
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -32,7 +35,9 @@ const Meals = () => {
       </span>
 
       {meals.length > 0 && (
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 px-2">
+        <div
+          className={`${conensed.className} grid grid-cols-2 lg:grid-cols-3 gap-3 px-2`}
+        >
           {meals.map((meal) => (
             <div key={meal.idMeal} className="border border-gray-400 p-2">
               <Image
