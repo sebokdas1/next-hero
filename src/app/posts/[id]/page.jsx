@@ -5,6 +5,19 @@ const getDetailsPost = async (id) => {
   const data = await res.json();
   return data;
 };
+
+//for meta data
+export const generateMetadata = async ({ params }) => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+  );
+  const postData = await res.json();
+  return {
+    title: postData?.title,
+    description: postData?.body,
+  };
+};
+
 const page = async ({ params }) => {
   const { title, body } = await getDetailsPost(params?.id);
   return (
