@@ -4,6 +4,18 @@ export async function GET() {
   });
 }
 
+export async function POST(request) {
+  const newUser = await request.json();
+  users.push({
+    id: users.length + 1,
+    name: newUser.name,
+  });
+  return Response.json({
+    message: "new user added",
+    users,
+  });
+}
+
 const users = [
   {
     id: 1,
