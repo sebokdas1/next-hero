@@ -11,6 +11,7 @@ const page = () => {
             type="text"
             id="name"
             placeholder="Your name"
+            required
           />
 
           <label htmlFor="email">Email</label>
@@ -20,6 +21,7 @@ const page = () => {
             name="email"
             id="email"
             placeholder="Your Email "
+            required
           />
 
           <label htmlFor="password">Password</label>
@@ -29,6 +31,7 @@ const page = () => {
             name="password"
             id="password"
             placeholder="Password"
+            required
           />
           <input
             className="w-[100%] py-[12px] px-[20px] my-[8px] bg-[#4CAF50] text-white cursor-pointer"

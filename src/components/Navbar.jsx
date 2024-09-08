@@ -49,11 +49,17 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {session?.status === "authenticated" ? (
-        <button onClick={() => signOut()}>LogOut</button>
-      ) : (
-        <button onClick={loginHandler}>LogIn</button>
-      )}
+      <div>
+        <Link href="/api/auth/signup" className="mr-2">
+          Signup
+        </Link>
+
+        {session?.status === "authenticated" ? (
+          <button onClick={() => signOut()}>LogOut</button>
+        ) : (
+          <button onClick={loginHandler}>LogIn</button>
+        )}
+      </div>
     </nav>
   );
 };
