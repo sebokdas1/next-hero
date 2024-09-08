@@ -1,5 +1,5 @@
 "use client";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -29,7 +29,7 @@ const Navbar = () => {
   ];
 
   const loginHandler = () => {
-    router.push("/login");
+    router.push("/api/auth/signin");
   };
   return (
     <nav className="p-3 flex lg:justify-evenly items-center bg-gray-200">
@@ -49,10 +49,10 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {session.status === "unauthenticated" ? (
-        <button onClick={loginHandler}>LogIn</button>
+      {session?.status === "authenticated" ? (
+        <button onClick={() => signOut()}>LogOut</button>
       ) : (
-        <button onClick={loginHandler}>LogOut</button>
+        <button onClick={loginHandler}>LogIn</button>
       )}
     </nav>
   );
