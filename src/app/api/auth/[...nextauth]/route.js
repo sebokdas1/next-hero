@@ -1,5 +1,7 @@
 import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 import Email from "next-auth/providers/email";
 
 export const outhOptions = {
@@ -40,6 +42,14 @@ export const outhOptions = {
         return null;
       },
     }),
+    GoogleProvider({
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
+    }),
+    FacebookProvider({
+      clientId: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_SECRET,
+    }),
   ],
 
   callbacks: {
@@ -72,7 +82,7 @@ const users = [
     type: "modarator",
   },
   {
-    email: "b@gmail.com",
+    email: "sebok.das.ff@gmail.com",
     password: "sebok",
     type: "member",
   },

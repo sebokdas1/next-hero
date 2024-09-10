@@ -10,14 +10,14 @@ const page = () => {
       password: e.target.password.value,
     };
 
-    const res = await fetch("http://localhost:3000/api/auth/signup/new-user", {
+    const resp = await fetch("http://localhost:3000/api/auth/signup/new-user", {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {
         "content-type": "application/json",
       },
     });
-    console.log(res);
+    console.log(resp);
   };
 
   return (
@@ -29,6 +29,7 @@ const page = () => {
             className="w-[100%] py-[12px] px-[20px] my-[8px]"
             type="text"
             id="name"
+            name="name"
             placeholder="Your name"
             required
           />

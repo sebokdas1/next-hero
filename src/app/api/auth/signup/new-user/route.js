@@ -1,4 +1,4 @@
-import connectDB from "@/lib/mongodb";
+import connectDB from "@/lib/connectDB";
 
 export const POST = async (request) => {
   try {

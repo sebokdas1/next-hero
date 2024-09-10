@@ -5,8 +5,8 @@ let db;
 const connectDB = async () => {
   if (db) return db;
   try {
-    const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
-    const client = new MongoClient(uri, {
+    const url = process.env.NEXT_PUBLIC_MONGODB_URI;
+    const client = new MongoClient(url, {
       serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
