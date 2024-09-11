@@ -8,6 +8,6 @@ export const POST = async (request) => {
     const res = await userCollecton.insertOne(newUser);
     return Response.json({ message: "new user created" });
   } catch (error) {
-    return Response.json({ message: "something went wrong" });
+    return Response.json({ message: "something went wrong", error });
   }
 };
